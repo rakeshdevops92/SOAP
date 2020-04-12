@@ -1,0 +1,1697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default environment" name="LoadUI Sample Project" resourceRoot="" soapui-version="6.0.0" id="50260edc-b2e0-49c3-9e2a-76fbd9efa6ad" abortOnError="false" runType="SEQUENTIAL" lastOpened="2016-10-12T15:37:03.653+03:00" encryptionMode="Not encrypted" updated="2.8.0 2019-04-30T17:12:05Z" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>Simulates three virtual users working with a local virtual service concurrently.</con:description>
+  <con:settings>
+    <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.LoadTestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="Geocode"/>
+  <con:entry key="Report to Generate" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value="C:\Program Files\SmartBear\Ready!API-1.0.0-SNAPSHOT/bin"/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="LoadTest" value="LoadTest 1"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Print Report Statistics" value="false"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="Capital cities"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="ThreadCount" value=""/>
+  <con:entry key="Limit" value=""/>
+</xml-fragment>]]></con:setting>
+  </con:settings>
+  <con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="Google Maps" type="rest" id="a4404eb6-6578-4bc4-a794-4cdc277f30f1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>http://maps.googleapis.com</con:endpoint>
+    </con:endpoints>
+    <con:resource name="Geocode (XML)" path="/maps/api/geocode/{format}" id="343e5bcd-7e62-4bb5-81f6-d28c0951dfe3">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>address</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value/>
+          <con:style>TEMPLATE</con:style>
+          <con:default/>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Search" method="GET" id="5ff41ee5-bc72-4b91-a95d-59bca3c7ff2d">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>format</con:name>
+            <con:value/>
+            <con:style>TEMPLATE</con:style>
+            <con:default/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/xml; charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>GeocodeResponse</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>0</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/xml</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/xml; charset=UTF-8</con:mediaType>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>GeocodeResponse</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:ns="http://maps.googleapis.com/maps/api/geocode/xml">ns:Response</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:ns="http://maps.googleapis.com/maps/api/geocode/xml">ns:Response</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:ns="http://maps.googleapis.com/maps/api/geocode/xml">ns:Response</con:element>
+        </con:representation>
+        <con:request name="Geocode search" mediaType="application/json" id="02e45f7b-74ca-4a03-b0b2-9e8155bcd90f">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://maps.googleapis.com</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://maps.googleapis.com/maps/api/geocode/xml</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <entry key="format" value="json" xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>address</con:entry>
+            <con:entry>format</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite name="Geocode" id="81695b59-d228-4d7c-abbc-c691db14ad84">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Capital cities" searchProperties="true" id="13fd4c87-d2d0-4b4f-a7f4-629c290cd19a">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="datasource" name="DataSource" id="08b01eeb-4d4d-4a8b-a0b6-9aba678111ef">
+        <con:settings/>
+        <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSource type="Grid">
+            <con:configuration>
+              <check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry></xml-fragment>]]></check>
+              <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Beijing</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">xml</con:entry></xml-fragment>]]></row>
+              <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Tokyo</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">xml</con:entry></xml-fragment>]]></row>
+              <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Moscow</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">xml</con:entry></xml-fragment>]]></row>
+              <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Seoul</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">xml</con:entry></xml-fragment>]]></row>
+              <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Jakarta</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">xml</con:entry></xml-fragment>]]></row>
+              <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Beijing</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">json</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+              <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Tokyo</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">json</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+              <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Moscow</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">json</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+              <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Seoul</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">json</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+              <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Jakarta</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">json</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+              <recognizeAsPlainText>true</recognizeAsPlainText>
+            </con:configuration>
+          </con:dataSource>
+          <con:shared>true</con:shared>
+          <con:restartShared>true</con:restartShared>
+          <con:property>cityName</con:property>
+          <con:property>format</con:property>
+          <con:startRow/>
+          <con:endRow/>
+          <con:recordsPerIteration>1</con:recordsPerIteration>
+          <con:completeLastOperation>true</con:completeLastOperation>
+          <con:trimValues>false</con:trimValues>
+          <con:entitizeValues>false</con:entitizeValues>
+          <con:restartOnRun>true</con:restartOnRun>
+          <con:expandProperties>false</con:expandProperties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Geocode search" id="41facf24-255d-4225-af4b-e86aa805bfd8">
+        <con:settings/>
+        <con:config service="Google Maps" resourcePath="/maps/api/geocode/{format}" methodName="Search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Geocode search" mediaType="application/json" id="2e1df8cb-1dbc-4e6b-b90d-a7b0decda7c1">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:8089</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://maps.googleapis.com/maps/api/geocode/xml</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="7adb83d0-bd06-4484-b12a-2814b005065b">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="address" value="${DataSource#cityName}"/>
+              <con:entry key="format" value="${DataSource#format}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>address</con:entry>
+              <con:entry>format</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasourceloop" name="DataSource Loop" id="7851b4c7-4879-4729-88b5-75671ee8f7c4">
+        <con:settings/>
+        <con:config>
+          <dataSourceStep>DataSource</dataSourceStep>
+          <targetStep>Geocode search</targetStep>
+        </con:config>
+      </con:testStep>
+      <con:loadTest id="37b5481f-5262-4976-9bba-b39d0a1f390a" name="Baseline Load Test (Geocoding)">
+        <con:settings>
+          <con:setting id="HttpSettings@close-connections">false</con:setting>
+          <con:setting id="hasBeenConvertedToLoadUITest">true</con:setting>
+        </con:settings>
+        <con:threadCount>3</con:threadCount>
+        <con:startDelay>0</con:startDelay>
+        <con:sampleInterval>250</con:sampleInterval>
+        <con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed>
+        <con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange>
+        <con:historyLimit>-1</con:historyLimit>
+        <con:testLimit>60</con:testLimit>
+        <con:limitType>TIME</con:limitType>
+        <con:loadStrategy>
+          <con:type>Simple</con:type>
+        </con:loadStrategy>
+        <con:assertion type="Step Status" name="Step Status"/>
+        <con:maxAssertionErrors>100</con:maxAssertionErrors>
+        <con:cancelExcessiveThreads>true</con:cancelExcessiveThreads>
+        <con:strategyInterval>500</con:strategyInterval>
+        <con:reportParameters/>
+      </con:loadTest>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>08b01eeb-4d4d-4a8b-a0b6-9aba678111ef</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:restMockService id="0a213029-e11b-4a4b-8ecf-ddad3f24c10b" port="8089" path="/" host="localhost" name="Google Maps Virt" routeModeEnabled="false" routeUnmatchedOperation="false" addUnmatchedOperation="false" routeEndpoint="">
+    <con:settings/>
+    <con:properties/>
+    <con:constraints>
+      <con:congestion>0</con:congestion>
+      <con:inputBandwidth>-1</con:inputBandwidth>
+      <con:outputBandwidth>-1</con:outputBandwidth>
+      <con:maxThreadPoolCapacity>15</con:maxThreadPoolCapacity>
+      <con:coreThreadPoolCapacity>1</con:coreThreadPoolCapacity>
+      <con:minApplicationDelay>0</con:minApplicationDelay>
+      <con:virtError>
+        <con:start>0</con:start>
+        <con:endless>true</con:endless>
+      </con:virtError>
+    </con:constraints>
+    <con:headerValidator type="NONE"/>
+    <con:restMockAction name="/maps/api/geocode/{format}" method="GET" resourcePath="/maps/api/geocode/{format}" id="de31e4f0-3317-4b6b-b17e-1e5deedd471b">
+      <con:settings/>
+      <con:defaultResponse>Response Ok</con:defaultResponse>
+      <con:dispatchStyle>PARAMETER</con:dispatchStyle>
+      <con:dispatchConfig/>
+      <con:dispatchPath>if( mockRequest.httpRequest.toString().contains("Beijing") )
+        {
+        return "Response Beijing"
+        }
+        else if( mockRequest.httpRequest.toString().contains("Tokyo") )
+        {
+        return "Response Tokyo"
+        }
+        else if( mockRequest.httpRequest.toString().contains("Moscow") )
+        {
+        return "Response Moscow"
+        }
+        else if( mockRequest.httpRequest.toString().contains("Seoul") )
+        {
+        return "Response Seoul"
+        }
+        else if( mockRequest.httpRequest.toString().contains("Jakarta") )
+        {
+        return "Response Jakarta"
+        }
+        else
+        {
+        return "Response Ok"
+        }</con:dispatchPath>
+      <con:dispatchXPath/>
+      <con:parameterDispatcherRuleContainer>
+        <con:ParameterDispatcherRule>
+          <con:ruleName>XML Return Beijing Response</con:ruleName>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>QUERY</con:parameterType>
+            <con:parameterOperationType>EQUALS</con:parameterOperationType>
+            <con:parameterName>address</con:parameterName>
+            <con:parameterValue>Beijing</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>PATH</con:parameterType>
+            <con:parameterOperationType>CONTAINS</con:parameterOperationType>
+            <con:parameterName>format</con:parameterName>
+            <con:parameterValue>xml</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:responseName>XML Response Beijing</con:responseName>
+        </con:ParameterDispatcherRule>
+        <con:ParameterDispatcherRule>
+          <con:ruleName>XML Return Tokyo Response</con:ruleName>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>QUERY</con:parameterType>
+            <con:parameterOperationType>EQUALS</con:parameterOperationType>
+            <con:parameterName>address</con:parameterName>
+            <con:parameterValue>Tokyo</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>PATH</con:parameterType>
+            <con:parameterOperationType>CONTAINS</con:parameterOperationType>
+            <con:parameterName>format</con:parameterName>
+            <con:parameterValue>xml</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:responseName>XML Response Tokyo</con:responseName>
+        </con:ParameterDispatcherRule>
+        <con:ParameterDispatcherRule>
+          <con:ruleName>XML Return Moscow Response</con:ruleName>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>QUERY</con:parameterType>
+            <con:parameterOperationType>EQUALS</con:parameterOperationType>
+            <con:parameterName>address</con:parameterName>
+            <con:parameterValue>Moscow</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>PATH</con:parameterType>
+            <con:parameterOperationType>CONTAINS</con:parameterOperationType>
+            <con:parameterName>format</con:parameterName>
+            <con:parameterValue>xml</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:responseName>XML Response Moscow</con:responseName>
+        </con:ParameterDispatcherRule>
+        <con:ParameterDispatcherRule>
+          <con:ruleName>XML Return Seoul Response</con:ruleName>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>QUERY</con:parameterType>
+            <con:parameterOperationType>EQUALS</con:parameterOperationType>
+            <con:parameterName>address</con:parameterName>
+            <con:parameterValue>Seoul</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>PATH</con:parameterType>
+            <con:parameterOperationType>CONTAINS</con:parameterOperationType>
+            <con:parameterName>format</con:parameterName>
+            <con:parameterValue>xml</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:responseName>XML Response Seoul</con:responseName>
+        </con:ParameterDispatcherRule>
+        <con:ParameterDispatcherRule>
+          <con:ruleName>XML Return Jakarta Response</con:ruleName>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>QUERY</con:parameterType>
+            <con:parameterOperationType>EQUALS</con:parameterOperationType>
+            <con:parameterName>address</con:parameterName>
+            <con:parameterValue>Jakarta</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>PATH</con:parameterType>
+            <con:parameterOperationType>CONTAINS</con:parameterOperationType>
+            <con:parameterName>format</con:parameterName>
+            <con:parameterValue>xml</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:responseName>XML Response Jakarta</con:responseName>
+        </con:ParameterDispatcherRule>
+        <con:ParameterDispatcherRule>
+          <con:ruleName>JSON Return Beijing Response</con:ruleName>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>PATH</con:parameterType>
+            <con:parameterOperationType>CONTAINS</con:parameterOperationType>
+            <con:parameterName>format</con:parameterName>
+            <con:parameterValue>json</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>QUERY</con:parameterType>
+            <con:parameterOperationType>EQUALS</con:parameterOperationType>
+            <con:parameterName>address</con:parameterName>
+            <con:parameterValue>Beijing</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:responseName>JSON Response Beijing</con:responseName>
+        </con:ParameterDispatcherRule>
+        <con:ParameterDispatcherRule>
+          <con:ruleName>JSON Response Tokyo</con:ruleName>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>PATH</con:parameterType>
+            <con:parameterOperationType>CONTAINS</con:parameterOperationType>
+            <con:parameterName>format</con:parameterName>
+            <con:parameterValue>json</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>QUERY</con:parameterType>
+            <con:parameterOperationType>EQUALS</con:parameterOperationType>
+            <con:parameterName>address</con:parameterName>
+            <con:parameterValue>Tokyo</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:responseName>JSON Response Tokyo</con:responseName>
+        </con:ParameterDispatcherRule>
+        <con:ParameterDispatcherRule>
+          <con:ruleName>JSON Response Moscow</con:ruleName>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>PATH</con:parameterType>
+            <con:parameterOperationType>CONTAINS</con:parameterOperationType>
+            <con:parameterName>format</con:parameterName>
+            <con:parameterValue>json</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>QUERY</con:parameterType>
+            <con:parameterOperationType>EQUALS</con:parameterOperationType>
+            <con:parameterName>address</con:parameterName>
+            <con:parameterValue>Moscow</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:responseName>JSON Response Moscow</con:responseName>
+        </con:ParameterDispatcherRule>
+        <con:ParameterDispatcherRule>
+          <con:ruleName>JSON Response Seoul</con:ruleName>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>PATH</con:parameterType>
+            <con:parameterOperationType>CONTAINS</con:parameterOperationType>
+            <con:parameterName>format</con:parameterName>
+            <con:parameterValue>json</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>QUERY</con:parameterType>
+            <con:parameterOperationType>EQUALS</con:parameterOperationType>
+            <con:parameterName>address</con:parameterName>
+            <con:parameterValue>Seoul</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:responseName>JSON Response Seoul</con:responseName>
+        </con:ParameterDispatcherRule>
+        <con:ParameterDispatcherRule>
+          <con:ruleName>JSON Response Jakarta</con:ruleName>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>PATH</con:parameterType>
+            <con:parameterOperationType>CONTAINS</con:parameterOperationType>
+            <con:parameterName>format</con:parameterName>
+            <con:parameterValue>json</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:parameterDispatcherCondition>
+            <con:parameterType>QUERY</con:parameterType>
+            <con:parameterOperationType>EQUALS</con:parameterOperationType>
+            <con:parameterName>address</con:parameterName>
+            <con:parameterValue>Jakarta</con:parameterValue>
+          </con:parameterDispatcherCondition>
+          <con:responseName>JSON Response Jakarta</con:responseName>
+        </con:ParameterDispatcherRule>
+      </con:parameterDispatcherRuleContainer>
+      <con:routeEnabled>false</con:routeEnabled>
+      <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+      <con:routeScript/>
+      <con:saveRoutedResponse>true</con:saveRoutedResponse>
+      <con:response name="Response Ok" id="a990c945-95fd-4470-8745-a41b5efc8b78" httpResponseStatus="200" mediaType="application/xml" encoding="UTF-8" dataSource="">
+        <con:settings/>
+        <con:script/>
+        <con:responseContent/>
+      </con:response>
+      <con:response name="XML Response Beijing" id="27cfbddf-7e96-4052-810b-42e6b76fb45d" httpResponseStatus="200" mediaType="application/xml" dataSource="" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070">
+        <con:settings/>
+        <con:responseContent><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<GeocodeResponse>
+ <status>OK</status>
+ <result>
+  <type>locality</type>
+  <type>political</type>
+  <formatted_address>Beijing, Beijing, China</formatted_address>
+  <address_component>
+   <long_name>Beijing</long_name>
+   <short_name>Beijing</short_name>
+   <type>locality</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Beijing</long_name>
+   <short_name>Beijing</short_name>
+   <type>administrative_area_level_1</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>China</long_name>
+   <short_name>CN</short_name>
+   <type>country</type>
+   <type>political</type>
+  </address_component>
+  <geometry>
+   <location>
+    <lat>39.9042110</lat>
+    <lng>116.4073950</lng>
+   </location>
+   <location_type>APPROXIMATE</location_type>
+   <viewport>
+    <southwest>
+     <lat>39.6612714</lat>
+     <lng>116.0119343</lng>
+    </southwest>
+    <northeast>
+     <lat>40.2164962</lat>
+     <lng>116.7829835</lng>
+    </northeast>
+   </viewport>
+   <bounds>
+    <southwest>
+     <lat>39.4427581</lat>
+     <lng>115.4234115</lng>
+    </southwest>
+    <northeast>
+     <lat>41.0608158</lat>
+     <lng>117.5146251</lng>
+    </northeast>
+   </bounds>
+  </geometry>
+ </result>
+</GeocodeResponse>]]></con:responseContent>
+      </con:response>
+      <con:response name="XML Response Tokyo" id="771c09bf-1e35-4859-8469-8edecb816209" httpResponseStatus="200" dataSource="" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070">
+        <con:settings/>
+        <con:responseContent><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<GeocodeResponse>
+ <status>OK</status>
+ <result>
+  <type>administrative_area_level_1</type>
+  <type>political</type>
+  <formatted_address>Tokyo, Japan</formatted_address>
+  <address_component>
+   <long_name>Tokyo</long_name>
+   <short_name>Tokyo</short_name>
+   <type>administrative_area_level_1</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Japan</long_name>
+   <short_name>JP</short_name>
+   <type>country</type>
+   <type>political</type>
+  </address_component>
+  <geometry>
+   <location>
+    <lat>35.6894875</lat>
+    <lng>139.6917064</lng>
+   </location>
+   <location_type>APPROXIMATE</location_type>
+   <viewport>
+    <southwest>
+     <lat>35.5288730</lat>
+     <lng>139.5105740</lng>
+    </southwest>
+    <northeast>
+     <lat>35.8178130</lat>
+     <lng>139.9102020</lng>
+    </northeast>
+   </viewport>
+   <bounds>
+    <southwest>
+     <lat>24.2242343</lat>
+     <lng>138.9427579</lng>
+    </southwest>
+    <northeast>
+     <lat>35.8986466</lat>
+     <lng>153.9875216</lng>
+    </northeast>
+   </bounds>
+  </geometry>
+ </result>
+</GeocodeResponse>]]></con:responseContent>
+      </con:response>
+      <con:response name="XML Response Moscow" id="44bfaee4-bb08-4409-9867-39d12cefd53e" httpResponseStatus="200" dataSource="" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070">
+        <con:settings/>
+        <con:responseContent><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<GeocodeResponse>
+ <status>OK</status>
+ <result>
+  <type>locality</type>
+  <type>political</type>
+  <formatted_address>Moscow, Russia</formatted_address>
+  <address_component>
+   <long_name>Moscow</long_name>
+   <short_name>Moscow</short_name>
+   <type>locality</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>gorod Moskva</long_name>
+   <short_name>g. Moskva</short_name>
+   <type>administrative_area_level_2</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Moscow</long_name>
+   <short_name>Moscow</short_name>
+   <type>administrative_area_level_1</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Russia</long_name>
+   <short_name>RU</short_name>
+   <type>country</type>
+   <type>political</type>
+  </address_component>
+  <geometry>
+   <location>
+    <lat>55.7558260</lat>
+    <lng>37.6173000</lng>
+   </location>
+   <location_type>APPROXIMATE</location_type>
+   <viewport>
+    <southwest>
+     <lat>55.4899270</lat>
+     <lng>37.3193288</lng>
+    </southwest>
+    <northeast>
+     <lat>56.0096570</lat>
+     <lng>37.9456611</lng>
+    </northeast>
+   </viewport>
+   <bounds>
+    <southwest>
+     <lat>55.4899270</lat>
+     <lng>37.3193288</lng>
+    </southwest>
+    <northeast>
+     <lat>56.0096570</lat>
+     <lng>37.9456611</lng>
+    </northeast>
+   </bounds>
+  </geometry>
+ </result>
+ <result>
+  <type>locality</type>
+  <type>political</type>
+  <formatted_address>Moscow, ID, USA</formatted_address>
+  <address_component>
+   <long_name>Moscow</long_name>
+   <short_name>Moscow</short_name>
+   <type>locality</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Latah County</long_name>
+   <short_name>Latah County</short_name>
+   <type>administrative_area_level_2</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Idaho</long_name>
+   <short_name>ID</short_name>
+   <type>administrative_area_level_1</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>United States</long_name>
+   <short_name>US</short_name>
+   <type>country</type>
+   <type>political</type>
+  </address_component>
+  <geometry>
+   <location>
+    <lat>46.7323875</lat>
+    <lng>-117.0001651</lng>
+   </location>
+   <location_type>APPROXIMATE</location_type>
+   <viewport>
+    <southwest>
+     <lat>46.7109121</lat>
+     <lng>-117.0396979</lng>
+    </southwest>
+    <northeast>
+     <lat>46.7588820</lat>
+     <lng>-116.9620680</lng>
+    </northeast>
+   </viewport>
+   <bounds>
+    <southwest>
+     <lat>46.7109121</lat>
+     <lng>-117.0396979</lng>
+    </southwest>
+    <northeast>
+     <lat>46.7588820</lat>
+     <lng>-116.9620680</lng>
+    </northeast>
+   </bounds>
+  </geometry>
+ </result>
+</GeocodeResponse>]]></con:responseContent>
+      </con:response>
+      <con:response name="XML Response Seoul" id="a84ce275-a180-486c-b820-82dc4ad248c5" httpResponseStatus="200" dataSource="" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070">
+        <con:settings/>
+        <con:responseContent><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<GeocodeResponse>
+ <status>OK</status>
+ <result>
+  <type>locality</type>
+  <type>political</type>
+  <formatted_address>Seoul, South Korea</formatted_address>
+  <address_component>
+   <long_name>Seoul</long_name>
+   <short_name>Seoul</short_name>
+   <type>locality</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>South Korea</long_name>
+   <short_name>KR</short_name>
+   <type>country</type>
+   <type>political</type>
+  </address_component>
+  <geometry>
+   <location>
+    <lat>37.5665350</lat>
+    <lng>126.9779692</lng>
+   </location>
+   <location_type>APPROXIMATE</location_type>
+   <viewport>
+    <southwest>
+     <lat>37.4346000</lat>
+     <lng>126.7968000</lng>
+    </southwest>
+    <northeast>
+     <lat>37.6956000</lat>
+     <lng>127.1823000</lng>
+    </northeast>
+   </viewport>
+   <bounds>
+    <southwest>
+     <lat>37.4259627</lat>
+     <lng>126.7645827</lng>
+    </southwest>
+    <northeast>
+     <lat>37.7017495</lat>
+     <lng>127.1835900</lng>
+    </northeast>
+   </bounds>
+  </geometry>
+ </result>
+</GeocodeResponse>]]></con:responseContent>
+      </con:response>
+      <con:response name="XML Response Jakarta" id="9d9cf99e-afdc-4d0d-9d6e-1f441bfb4f7a" httpResponseStatus="200" dataSource="" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070">
+        <con:settings/>
+        <con:responseContent><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<GeocodeResponse>
+ <status>OK</status>
+ <result>
+  <type>colloquial_area</type>
+  <type>locality</type>
+  <type>political</type>
+  <formatted_address>Jakarta, Special Capital Region of Jakarta, Indonesia</formatted_address>
+  <address_component>
+   <long_name>Jakarta</long_name>
+   <short_name>Jakarta</short_name>
+   <type>colloquial_area</type>
+   <type>locality</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Special Capital Region of Jakarta</long_name>
+   <short_name>Special Capital Region of Jakarta</short_name>
+   <type>administrative_area_level_1</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Indonesia</long_name>
+   <short_name>ID</short_name>
+   <type>country</type>
+   <type>political</type>
+  </address_component>
+  <geometry>
+   <location>
+    <lat>-6.2087634</lat>
+    <lng>106.8455990</lng>
+   </location>
+   <location_type>APPROXIMATE</location_type>
+   <viewport>
+    <southwest>
+     <lat>-6.3708331</lat>
+     <lng>106.6862110</lng>
+    </southwest>
+    <northeast>
+     <lat>-6.0886599</lat>
+     <lng>106.9728250</lng>
+    </northeast>
+   </viewport>
+   <bounds>
+    <southwest>
+     <lat>-6.3708331</lat>
+     <lng>106.6862110</lng>
+    </southwest>
+    <northeast>
+     <lat>-6.0886599</lat>
+     <lng>106.9728250</lng>
+    </northeast>
+   </bounds>
+  </geometry>
+ </result>
+</GeocodeResponse>]]></con:responseContent>
+      </con:response>
+      <con:response name="JSON Response Beijing" id="199c16e8-c9dc-478c-aa51-51f754b7ff83" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+        <con:settings/>
+        <con:responseContent>{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "Beijing",
+               "short_name" : "Beijing",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Beijing",
+               "short_name" : "Beijing",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "China",
+               "short_name" : "CN",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Beijing, China",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 41.0608157,
+                  "lng" : 117.514625
+               },
+               "southwest" : {
+                  "lat" : 39.442758,
+                  "lng" : 115.4234112
+               }
+            },
+            "location" : {
+               "lat" : 39.90419989999999,
+               "lng" : 116.4073963
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.2164962,
+                  "lng" : 116.7829835
+               },
+               "southwest" : {
+                  "lat" : 39.6612714,
+                  "lng" : 116.0119343
+               }
+            }
+         },
+         "place_id" : "ChIJuSwU55ZS8DURiqkPryBWYrk",
+         "types" : [ "locality", "political" ]
+      }
+   ],
+   "status" : "OK"
+}</con:responseContent>
+        <con:header>
+          <con:name>X-Frame-Options</con:name>
+          <con:value>SAMEORIGIN</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Cache-Control</con:name>
+          <con:value>public, max-age=21600</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Server</con:name>
+          <con:value>mafe</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Alt-Svc</con:name>
+          <con:value>quic=":443"; ma=2592000; v="46,44,43,39"</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Access-Control-Allow-Origin</con:name>
+          <con:value>*</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Server-Timing</con:name>
+          <con:value>gfet4t7; dur=52</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Vary</con:name>
+          <con:value>Accept-Language</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Expires</con:name>
+          <con:value>Fri, 28 Jun 2019 01:43:54 GMT</con:value>
+        </con:header>
+        <con:header>
+          <con:name>X-XSS-Protection</con:name>
+          <con:value>0</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Date</con:name>
+          <con:value>Thu, 27 Jun 2019 19:43:54 GMT</con:value>
+        </con:header>
+      </con:response>
+      <con:response name="JSON Response Tokyo" id="8aad6c83-cfde-4a19-8998-ef2be95f74c1" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+        <con:settings/>
+        <con:responseContent>{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "Tokyo",
+               "short_name" : "Tokyo",
+               "types" : [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name" : "Japan",
+               "short_name" : "JP",
+               "types" : [
+                  "country",
+                  "political"
+               ]
+            }
+         ],
+         "formatted_address" : "Tokyo, Japan",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 35.8984285,
+                  "lng" : 153.9867945
+               },
+               "southwest" : {
+                  "lat" : 20.4251031,
+                  "lng" : 136.0696826
+               }
+            },
+            "location" : {
+               "lat" : 35.6761919,
+               "lng" : 139.6503106
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 36.4408483,
+                  "lng" : 141.2405144
+               },
+               "southwest" : {
+                  "lat" : 34.5776326,
+                  "lng" : 138.2991098
+               }
+            }
+         },
+         "place_id" : "ChIJ51cu8IcbXWARiRtXIothAS4",
+         "types" : [
+            "administrative_area_level_1",
+            "political"
+         ]
+      }
+   ],
+   "status" : "OK"
+}</con:responseContent>
+        <con:header>
+          <con:name>X-Frame-Options</con:name>
+          <con:value>SAMEORIGIN</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Cache-Control</con:name>
+          <con:value>public, max-age=21600</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Server</con:name>
+          <con:value>mafe</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Alt-Svc</con:name>
+          <con:value>quic=":443"; ma=2592000; v="46,44,43,39"</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Access-Control-Allow-Origin</con:name>
+          <con:value>*</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Server-Timing</con:name>
+          <con:value>gfet4t7; dur=434</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Vary</con:name>
+          <con:value>Accept-Language</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Expires</con:name>
+          <con:value>Fri, 28 Jun 2019 01:43:55 GMT</con:value>
+        </con:header>
+        <con:header>
+          <con:name>X-XSS-Protection</con:name>
+          <con:value>0</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Date</con:name>
+          <con:value>Thu, 27 Jun 2019 19:43:55 GMT</con:value>
+        </con:header>
+      </con:response>
+      <con:response name="JSON Response Moscow" id="d6728c65-7b5e-4c4d-b9cb-2255da8ffa68" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+        <con:settings/>
+        <con:responseContent>{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "Moscow",
+               "short_name" : "Moscow",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Moscow",
+               "short_name" : "Moscow",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Russia",
+               "short_name" : "RU",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Moscow, Russia",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 56.0214609,
+                  "lng" : 37.9678221
+               },
+               "southwest" : {
+                  "lat" : 55.142591,
+                  "lng" : 36.8032249
+               }
+            },
+            "location" : {
+               "lat" : 55.755826,
+               "lng" : 37.6172999
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 56.0214609,
+                  "lng" : 37.9678221
+               },
+               "southwest" : {
+                  "lat" : 55.142591,
+                  "lng" : 36.8032249
+               }
+            }
+         },
+         "place_id" : "ChIJybDUc_xKtUYRTM9XV8zWRD0",
+         "types" : [ "locality", "political" ]
+      }
+   ],
+   "status" : "OK"
+}</con:responseContent>
+        <con:header>
+          <con:name>X-Frame-Options</con:name>
+          <con:value>SAMEORIGIN</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Cache-Control</con:name>
+          <con:value>public, max-age=21600</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Server</con:name>
+          <con:value>mafe</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Alt-Svc</con:name>
+          <con:value>quic=":443"; ma=2592000; v="46,44,43,39"</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Access-Control-Allow-Origin</con:name>
+          <con:value>*</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Server-Timing</con:name>
+          <con:value>gfet4t7; dur=50</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Vary</con:name>
+          <con:value>Accept-Language</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Expires</con:name>
+          <con:value>Fri, 28 Jun 2019 01:43:55 GMT</con:value>
+        </con:header>
+        <con:header>
+          <con:name>X-XSS-Protection</con:name>
+          <con:value>0</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Date</con:name>
+          <con:value>Thu, 27 Jun 2019 19:43:55 GMT</con:value>
+        </con:header>
+      </con:response>
+      <con:response name="JSON Response Seoul" id="0923c875-e2f4-4874-81e7-35031ca00dcc" httpResponseStatus="200" mediaType="application/json" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+        <con:settings/>
+        <con:responseContent>{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "Seoul",
+               "short_name" : "Seoul",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Seoul",
+               "short_name" : "Seoul",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "South Korea",
+               "short_name" : "KR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Seoul, South Korea",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 37.7017495,
+                  "lng" : 127.1835899
+               },
+               "southwest" : {
+                  "lat" : 37.4259627,
+                  "lng" : 126.7645827
+               }
+            },
+            "location" : {
+               "lat" : 37.566535,
+               "lng" : 126.9779692
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.6956,
+                  "lng" : 127.1823
+               },
+               "southwest" : {
+                  "lat" : 37.4346,
+                  "lng" : 126.7968
+               }
+            }
+         },
+         "place_id" : "ChIJzWXFYYuifDUR64Pq5LTtioU",
+         "types" : [ "locality", "political" ]
+      }
+   ],
+   "status" : "OK"
+}</con:responseContent>
+        <con:header>
+          <con:name>X-Frame-Options</con:name>
+          <con:value>SAMEORIGIN</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Cache-Control</con:name>
+          <con:value>public, max-age=21600</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Server</con:name>
+          <con:value>mafe</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Alt-Svc</con:name>
+          <con:value>quic=":443"; ma=2592000; v="46,44,43,39"</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Access-Control-Allow-Origin</con:name>
+          <con:value>*</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Server-Timing</con:name>
+          <con:value>gfet4t7; dur=234</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Vary</con:name>
+          <con:value>Accept-Language</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Expires</con:name>
+          <con:value>Fri, 28 Jun 2019 01:43:55 GMT</con:value>
+        </con:header>
+        <con:header>
+          <con:name>X-XSS-Protection</con:name>
+          <con:value>0</con:value>
+        </con:header>
+        <con:header>
+          <con:name>Date</con:name>
+          <con:value>Thu, 27 Jun 2019 19:43:55 GMT</con:value>
+        </con:header>
+      </con:response>
+      <con:response name="JSON Response Jakarta" id="92d2a265-4fa0-43b7-8f2d-3c1213589802" httpResponseStatus="200" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json" dataSource="">
+        <con:settings/>
+        <con:responseContent>{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "Jakarta",
+               "short_name" : "Jakarta",
+               "types" : [
+                  "colloquial_area",
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name" : "Jakarta",
+               "short_name" : "Jakarta",
+               "types" : [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name" : "Indonesia",
+               "short_name" : "ID",
+               "types" : [
+                  "country",
+                  "political"
+               ]
+            }
+         ],
+         "formatted_address" : "Jakarta, Indonesia",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -6.0886599,
+                  "lng" : 106.972825
+               },
+               "southwest" : {
+                  "lat" : -6.3708331,
+                  "lng" : 106.686211
+               }
+            },
+            "location" : {
+               "lat" : -6.2087634,
+               "lng" : 106.845599
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -6.0886599,
+                  "lng" : 106.972825
+               },
+               "southwest" : {
+                  "lat" : -6.3708331,
+                  "lng" : 106.686211
+               }
+            }
+         },
+         "place_id" : "ChIJnUvjRenzaS4RoobX2g-_cVM",
+         "types" : [
+            "colloquial_area",
+            "locality",
+            "political"
+         ]
+      }
+   ],
+   "status" : "OK"
+}</con:responseContent>
+      </con:response>
+    </con:restMockAction>
+  </con:restMockService>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:reportTemplates/>
+    <con:reportTemplates/>
+    <con:xmlTemplates/>
+    <con:xmlTemplates/>
+    <con:parameters/>
+    <con:parameters/>
+  </con:reporting>
+  <con:reporting/>
+  <con:sensitiveInformation/>
+  <con:authRepository/>
+  <con:loadUiTest name="Baseline Load Test (Geocoding)" id="fb7dd8c2-c706-4dce-9d59-4cb15087b4cb">
+    <con:description>Simulates three virtual users working with a local virtual service concurrently. Turn on virtual service in ServiceV</con:description>
+    <con:settings>
+      <con:setting id="soapUIObjectSourceId">13fd4c87-d2d0-4b4f-a7f4-629c290cd19a</con:setting>
+      <con:setting id="convertedFromLoadTestModelItemId">37b5481f-5262-4976-9bba-b39d0a1f390a</con:setting>
+    </con:settings>
+    <con1:loadui-project id="177d63aa-da34-40b2-9c1b-bfd1ae5e6e14" label="Baseline Load Test (Geocoding)" xmlns:con1="http://eviware.com/loadui/config">
+      <con1:properties>
+        <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+        <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">false</con1:property>
+        <con1:property propagates="true" key="ModelItem.saveReport" type="java.lang.Boolean">false</con1:property>
+        <con1:property propagates="true" key="ModelItem.reportFolder" type="java.lang.String"/>
+        <con1:property propagates="true" key="ModelItem.reportFormat" type="java.lang.String"/>
+        <con1:property propagates="true" key="ModelItem.remoteMode" type="java.lang.String"/>
+        <con1:property propagates="true" key="Temporary project" type="java.lang.String"/>
+        <con1:property propagates="true" key="ModelItem.rate" type="java.lang.Long">10</con1:property>
+        <con1:property propagates="true" key="ModelItem.loadDistributionType" type="com.smartbear.load.facade.LoadDistributionType">PerScenario</con1:property>
+      </con1:properties>
+      <con1:attributes>
+        <con1:property key="limits">Time=60;</con1:property>
+      </con1:attributes>
+      <con1:addons/>
+      <con1:scene label="DefaultLoadUITest" id="4b5d33f9-f1d9-4e4d-900b-8460937e67e7" version="16">
+        <con1:properties>
+          <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+          <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="SceneItem.followProject" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="SceneItem.scenarioRatePercentage" type="java.lang.Long">100</con1:property>
+          <con1:property propagates="true" key="SceneItem.scenarioRateSpecific" type="java.lang.Long">10</con1:property>
+          <con1:property propagates="true" key="ModelItem.samplerOutputLevel" type="com.eviware.loadui.api.component.SoapUISamplerOutputLevel">TestCaseAndAllTestSteps</con1:property>
+        </con1:properties>
+        <con1:attributes>
+          <con1:property key="limits">Time=60;</con1:property>
+        </con1:attributes>
+        <con1:addons/>
+        <con1:component type="com.eviware.loadui.components.soapui.SoapUISamplerComponent" label="Ready API TestCase Runner 1" id="e213f837-977c-497b-bc2b-529d581cfa2a" category="Runners">
+          <con1:properties>
+            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+            <con1:property propagates="true" key="concurrentSamples" type="java.lang.Long">1000</con1:property>
+            <con1:property propagates="true" key="property_name_is_not_relevant_for_private_property" type="java.lang.Long">9223372036854775807</con1:property>
+            <con1:property propagates="true" key="maxQueueSize" type="java.lang.Long">1000</con1:property>
+            <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
+            <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
+            <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">0</con1:property>
+            <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">13fd4c87-d2d0-4b4f-a7f4-629c290cd19a</con1:property>
+            <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
+            <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
+            <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
+            <con1:property propagates="true" key="closeConnectionsAfterRequest" type="java.lang.Boolean">false</con1:property>
+            <con1:property propagates="true" key="disableSoapuiAssertions" type="java.lang.Boolean">false</con1:property>
+            <con1:property propagates="true" key="forceShareDatasources" type="java.lang.Boolean">true</con1:property>
+          </con1:properties>
+          <con1:attributes>
+            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Ready API TestCase Runner</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:component>
+        <con1:component type="com.eviware.loadui.impl.component.generators.FixedVU" label="Fixed Load 1" id="f7518b1a-65c2-428e-b9fd-2f68e2616ff8" category="Generators">
+          <con1:properties>
+            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+            <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">false</con1:property>
+            <con1:property propagates="true" key="load" type="java.lang.Long">3</con1:property>
+            <con1:property propagates="true" key="interval" type="java.lang.Long">1000</con1:property>
+            <con1:property propagates="true" key="limitVU" type="java.lang.Long">10</con1:property>
+          </con1:properties>
+          <con1:attributes>
+            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Fixed Load</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:component>
+        <con1:component type="com.eviware.loadui.impl.component.IntervalComponent" label="Interval 1" id="ecb6d926-7835-4167-a1df-34dfcd82db71" category="Scheduler">
+          <con1:properties>
+            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+            <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">true</con1:property>
+            <con1:property propagates="true" key="startAt" type="java.lang.Long">0</con1:property>
+            <con1:property propagates="true" key="duration" type="java.lang.Long">5</con1:property>
+            <con1:property propagates="true" key="unit" type="java.lang.String">Sec</con1:property>
+            <con1:property propagates="true" key="mode" type="java.lang.String">Single</con1:property>
+            <con1:property propagates="true" key="defaultMode" type="java.lang.Boolean">true</con1:property>
+          </con1:properties>
+          <con1:attributes>
+            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Interval</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:component>
+        <con1:connection outputTerminalId="ecb6d926-7835-4167-a1df-34dfcd82db71/outgoingTerminal" inputTerminalId="f7518b1a-65c2-428e-b9fd-2f68e2616ff8/stateTerminal"/>
+        <con1:connection outputTerminalId="f7518b1a-65c2-428e-b9fd-2f68e2616ff8/triggerTerminal" inputTerminalId="e213f837-977c-497b-bc2b-529d581cfa2a/triggerTerminal"/>
+        <con1:connection outputTerminalId="e213f837-977c-497b-bc2b-529d581cfa2a/runningTerminal" inputTerminalId="f7518b1a-65c2-428e-b9fd-2f68e2616ff8/Sample Count"/>
+      </con1:scene>
+      <con1:statistics>
+        <con1:page title="DefaultLoadUIStatisticPage">
+          <con1:chartGroup type="com.eviware.loadui.api.statistics.model.chart.line.LineChartView" title="" groupType="Monitors">
+            <con1:attributes/>
+          </con1:chartGroup>
+        </con1:page>
+      </con1:statistics>
+    </con1:loadui-project>
+    <con:loadUITestScenario projectId="177d63aa-da34-40b2-9c1b-bfd1ae5e6e14" scenarioId="4b5d33f9-f1d9-4e4d-900b-8460937e67e7" name="DefaultLoadUITest" id="c3fb6d17-e58b-479a-aa23-c3718b7d9447">
+      <con:settings/>
+    </con:loadUITestScenario>
+    <con:loadUIPanelData id="62401d4f-5509-4adf-b371-07dddcde3e19">
+      <con:panel>Log</con:panel>
+      <con:data>
+        <con:paramName>column_width@Timestamp</con:paramName>
+        <con:paramValue>97</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Timestamp</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@ID</con:paramName>
+        <con:paramValue>74</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@ID</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Status</con:paramName>
+        <con:paramValue>67</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Status</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@TriggerTimestamp</con:paramName>
+        <con:paramValue>97</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@TriggerTimestamp</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@TimeTaken</con:paramName>
+        <con:paramValue>134</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@TimeTaken</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@_wait_time_</con:paramName>
+        <con:paramValue>124</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@_wait_time_</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Bytes</con:paramName>
+        <con:paramValue>60</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Bytes</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@HTTP Status</con:paramName>
+        <con:paramValue>106</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@HTTP Status</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@CurrentlyRunning</con:paramName>
+        <con:paramValue>90</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@CurrentlyRunning</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Request</con:paramName>
+        <con:paramValue>79</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Request</con:paramName>
+        <con:paramValue>false</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Response</con:paramName>
+        <con:paramValue>90</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Response</con:paramName>
+        <con:paramValue>false</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@soapui_context</con:paramName>
+        <con:paramValue>129</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@soapui_context</con:paramName>
+        <con:paramValue>false</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Test step status</con:paramName>
+        <con:paramValue>120</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Test step status</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+    </con:loadUIPanelData>
+    <con:setupScript/>
+    <con:teardownScript/>
+    <con:statistics id="7bb1068d-f2de-4fb6-86ca-49f14a05c9ac"/>
+    <con:statistics id="2e3bcc74-4721-4e74-97d6-eea49ea061fc"/>
+    <con:reportParameters/>
+  </con:loadUiTest>
+  <con:loadUiTest name="Rampup Load Test(stress test)" id="1ef521db-1acf-4659-9af9-77ccfb7794c2">
+    <con:settings>
+      <con:setting id="soapUIObjectSourceId">13fd4c87-d2d0-4b4f-a7f4-629c290cd19a</con:setting>
+      <con:setting id="soapUIObjectSourceType">soapUIObjectSourceType_TestCase</con:setting>
+    </con:settings>
+    <con1:loadui-project id="9f84b9c5-5134-464b-a7ef-ce86aba514b1" label="Rampup Load Test(stress test)" xmlns:con1="http://eviware.com/loadui/config">
+      <con1:properties>
+        <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+        <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">false</con1:property>
+        <con1:property propagates="true" key="ModelItem.saveReport" type="java.lang.Boolean">false</con1:property>
+        <con1:property propagates="true" key="ModelItem.reportFolder" type="java.lang.String"/>
+        <con1:property propagates="true" key="ModelItem.reportFormat" type="java.lang.String"/>
+        <con1:property propagates="true" key="Temporary project" type="java.lang.String"/>
+        <con1:property propagates="true" key="ModelItem.rate" type="java.lang.Long">10</con1:property>
+        <con1:property propagates="true" key="ModelItem.loadDistributionType" type="com.smartbear.load.facade.LoadDistributionType">PerScenario</con1:property>
+        <con1:property propagates="true" key="ModelItem.remoteMode" type="java.lang.String"/>
+      </con1:properties>
+      <con1:attributes>
+        <con1:property key="limits">Time=120;</con1:property>
+      </con1:attributes>
+      <con1:addons/>
+      <con1:scene label="New Scenario" id="a179b2bf-68c7-452f-94a8-07cae315d92e">
+        <con1:properties>
+          <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+          <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="SceneItem.followProject" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="SceneItem.scenarioRatePercentage" type="java.lang.Long">100</con1:property>
+          <con1:property propagates="true" key="SceneItem.scenarioRateSpecific" type="java.lang.Long">25</con1:property>
+          <con1:property propagates="true" key="ModelItem.samplerOutputLevel" type="com.eviware.loadui.api.component.SoapUISamplerOutputLevel">TestCaseAndAllTestSteps</con1:property>
+        </con1:properties>
+        <con1:attributes>
+          <con1:property key="limits">Time=120;</con1:property>
+        </con1:attributes>
+        <con1:addons/>
+        <con1:component type="com.eviware.loadui.impl.component.IntervalComponent" label="Interval 1" id="c2d838fb-aff6-4474-ba8f-c3982cc506cb" category="Scheduler">
+          <con1:properties>
+            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+            <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">true</con1:property>
+            <con1:property propagates="true" key="startAt" type="java.lang.Long">0</con1:property>
+            <con1:property propagates="true" key="duration" type="java.lang.Long">5</con1:property>
+            <con1:property propagates="true" key="unit" type="java.lang.String">Sec</con1:property>
+            <con1:property propagates="true" key="mode" type="java.lang.String">Single</con1:property>
+            <con1:property propagates="true" key="defaultMode" type="java.lang.Boolean">true</con1:property>
+          </con1:properties>
+          <con1:attributes>
+            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Interval</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:component>
+        <con1:component type="com.eviware.loadui.components.soapui.SoapUISamplerComponent" label="Geocode:Capital cities" id="d09160a6-0c68-4d75-a375-ddb75390bbc2" category="Runners">
+          <con1:properties>
+            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+            <con1:property propagates="true" key="concurrentSamples" type="java.lang.Long">1000</con1:property>
+            <con1:property propagates="true" key="property_name_is_not_relevant_for_private_property" type="java.lang.Long">9223372036854775807</con1:property>
+            <con1:property propagates="true" key="maxQueueSize" type="java.lang.Long">1000</con1:property>
+            <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
+            <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
+            <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">0</con1:property>
+            <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">13fd4c87-d2d0-4b4f-a7f4-629c290cd19a</con1:property>
+            <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
+            <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
+            <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
+            <con1:property propagates="true" key="closeConnectionsAfterRequest" type="java.lang.Boolean">false</con1:property>
+            <con1:property propagates="true" key="disableSoapuiAssertions" type="java.lang.Boolean">false</con1:property>
+            <con1:property propagates="true" key="forceShareDatasources" type="java.lang.Boolean">true</con1:property>
+          </con1:properties>
+          <con1:attributes>
+            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Ready API TestCase Runner</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:component>
+        <con1:component type="com.eviware.loadui.impl.component.generators.RampUpVU" label="Ramp Load 1" id="f28d6f7b-85ad-427c-a850-b7bee0be0519" category="Generators">
+          <con1:properties>
+            <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+            <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">false</con1:property>
+            <con1:property propagates="true" key="limitVU" type="java.lang.Long">10</con1:property>
+            <con1:property propagates="true" key="peakVU" type="java.lang.Long">25</con1:property>
+            <con1:property propagates="true" key="baseVU" type="java.lang.Long">0</con1:property>
+            <con1:property propagates="true" key="waitTime" type="java.lang.Long">1000</con1:property>
+            <con1:property propagates="true" key="rampDuration" type="java.lang.Long">120</con1:property>
+          </con1:properties>
+          <con1:attributes>
+            <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Ramp Load</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:component>
+        <con1:connection outputTerminalId="c2d838fb-aff6-4474-ba8f-c3982cc506cb/outgoingTerminal" inputTerminalId="f28d6f7b-85ad-427c-a850-b7bee0be0519/stateTerminal"/>
+        <con1:connection outputTerminalId="f28d6f7b-85ad-427c-a850-b7bee0be0519/triggerTerminal" inputTerminalId="d09160a6-0c68-4d75-a375-ddb75390bbc2/triggerTerminal"/>
+        <con1:connection outputTerminalId="d09160a6-0c68-4d75-a375-ddb75390bbc2/runningTerminal" inputTerminalId="f28d6f7b-85ad-427c-a850-b7bee0be0519/Sample Count"/>
+      </con1:scene>
+      <con1:statistics>
+        <con1:page title="DefaultLoadUIStatisticPage">
+          <con1:chartGroup type="com.eviware.loadui.api.statistics.model.chart.line.LineChartView" title="" groupType="Monitors">
+            <con1:attributes>
+              <con1:property key="GroupId">5d6aaef3-2c8a-4f36-9fa5-b9760ad6b6c3</con1:property>
+            </con1:attributes>
+          </con1:chartGroup>
+        </con1:page>
+      </con1:statistics>
+    </con1:loadui-project>
+    <con:loadUITestScenario projectId="9f84b9c5-5134-464b-a7ef-ce86aba514b1" scenarioId="a179b2bf-68c7-452f-94a8-07cae315d92e" name="New Scenario" id="edce711d-c6ec-4f08-8371-d281dcfd9c15">
+      <con:settings/>
+    </con:loadUITestScenario>
+    <con:loadUIPanelData id="540dfe3a-0f40-4f27-a959-0587401d0bcb">
+      <con:panel>Log</con:panel>
+      <con:data>
+        <con:paramName>column_width@Timestamp</con:paramName>
+        <con:paramValue>84</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Timestamp</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@ID</con:paramName>
+        <con:paramValue>74</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@ID</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Test step status</con:paramName>
+        <con:paramValue>120</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Test step status</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@TriggerTimestamp</con:paramName>
+        <con:paramValue>84</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@TriggerTimestamp</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@TimeTaken</con:paramName>
+        <con:paramValue>115</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@TimeTaken</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@_wait_time_</con:paramName>
+        <con:paramValue>106</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@_wait_time_</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Bytes</con:paramName>
+        <con:paramValue>52</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Bytes</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@HTTP Status</con:paramName>
+        <con:paramValue>90</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@HTTP Status</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@CurrentlyRunning</con:paramName>
+        <con:paramValue>75</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@CurrentlyRunning</con:paramName>
+        <con:paramValue>true</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Request</con:paramName>
+        <con:paramValue>67</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Request</con:paramName>
+        <con:paramValue>false</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_width@Response</con:paramName>
+        <con:paramValue>77</con:paramValue>
+      </con:data>
+      <con:data>
+        <con:paramName>column_visible@Response</con:paramName>
+        <con:paramValue>false</con:paramValue>
+      </con:data>
+    </con:loadUIPanelData>
+    <con:setupScript/>
+    <con:teardownScript/>
+    <con:statistics id="5fcb4f88-53cb-434e-ac1c-93e02d741b24"/>
+    <con:statistics id="edb78ae9-9c7d-4aaa-8231-1d7ed5e30abc"/>
+    <con:reportParameters/>
+  </con:loadUiTest>
+  <con:tags/>
+</con:soapui-project>
